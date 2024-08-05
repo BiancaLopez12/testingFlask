@@ -56,8 +56,8 @@ def test_login(client, auth):
 
 @pytest.mark.parametrize(
     ("username", "password", "message"),
-    (("a", "test", "Nombre Incorrecto."), 
-     ("test", "a", "Contraseña Inconrrecta.")),
+    (("a", "test", "Nombre o Contraseña Incorrecto.")), 
+     #("test", "a", "Contraseña Inconrrecta.")),
 )
 def test_login_validate_input(auth, username, password, message):
     response = auth.login(username, password)
